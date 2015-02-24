@@ -3,7 +3,10 @@
 # Do not edit, changes will be overwritten
 #
 
-Hostname "<%= @name %>"
+<%- unless @name.nil? || @name == '' -%>
+    Hostname "<%= @name %>"
+<%- end -%>
+
 FQDNLookup true
 BaseDir "<%= @dir %>"
 PluginDir "<%= @dir %>/lib/collectd"
